@@ -157,12 +157,12 @@ INSERT INTO FUNCIONARIOS
 ('1020','46.276.254.2-15','ALBERTO SILVA MARQUES','MOJU','M',2,'2006-10-07','1991-10-10','2','N','S'),
 ('1026','52.260.569.2-34','IVETE CORDEIRO DA SILVA','BELEM','D',6,'2010-06-16','1995-03-25','1','N','N'),
 ('1038','37.509.195.2-68','ARNALDO BESSA RODRIGUES','BELEM','D',6,'2010-06-12','1972-09-23','1','N','S'),
-('1040','03.829.430.2-30','SÉRGIO GAMA MOREIRA','TAILANDIA','M',1,'2010-11-22','1980-07-21','1','N','S'),
+('1040','03.829.430.2-30','SÃ‰RGIO GAMA MOREIRA','TAILANDIA','M',1,'2010-11-22','1980-07-21','1','N','S'),
 ('1042','09.740.821.2-00','KLEIBER DE SOUSA','SALVATERRA','M',1,'2010-11-23','1951-11-09','1','N','S'),
 ('1044','06.716.301.9-92','DIARACY ROFFE FERREIRA DE LEMOS','BELEM','G',5,'2011-09-18','1957-06-23','0','N','N'),
 ('1045','01.017.507.2-28','CARLOS CLEYSON DAVID DE SOUZA','CASTANHAL','S',1,'2012-08-19','1985-01-15','0','S','S'),
 ('1050','83.609.695.2-34','ANTONIO MARCOS CARDOSO DA SILVA','BELEM','E',4,'2012-09-17','1982-12-20','3','N','S'),
-('1052','65.516.265.2-15','ANTONIA DA SILVA MORAES OLIVEIRA','SANTAR•EM','G',4,'2013-06-19','1980-10-12','2','N','S'),
+('1052','65.516.265.2-15','ANTONIA DA SILVA MORAES OLIVEIRA','SANTARâ€¢EM','G',4,'2013-06-19','1980-10-12','2','N','S'),
 ('1054','24.771.228.2-72','RAFAEL BARROS PRATES','PARAGOMINAS','S',1,'2013-10-10','1944-12-29','1','S','S'),
 ('1055','97.327.875.2-04','CARLOS BARBOSA IBIAPINO','BELEM','D',5,'2013-10-11','1992-06-16','3','N','N'),
 ('1060','29.501.210.2-00','ARNALDO MONTEIRO DA SILVA','MOJU','G',4,'2013-12-15','1936-05-17','1','N','S'),
@@ -267,7 +267,7 @@ INSERT INTO PROV_SAL_FAMILIA VALUES
 (56.47, 1655.98)
 
 INSERT INTO PROV_ESCOLARIDADE VALUES
-('S', 'MÉDIO', 0.0),
+('S', 'MÃ‰DIO', 0.0),
 ('G', 'GRADUADO', 1.18),
 ('E', 'ESPECIALIZACAO', 1.25),
 ('M', 'MESTRADO', 1.54),
@@ -619,36 +619,36 @@ BEGIN
 	
 	DECLARE @TEXTO VARCHAR(MAX)
 	SET @TEXTO = '----------------------' + char(13)+ char(10) 
-	SET @TEXTO = 'Governo do Estado do Pará ' + char(13)+ char(10) + '
-	Secretaria Especial de Estado de Gestão ' + char(13)+ char(10) + '
-	Secretaria de Estado de Administração ' + char(13)+ char(10) + '
-	Sistema de Gestão Integrada de Recursos Humanos ' + char(13)+ char(10) + '
+	SET @TEXTO = 'Governo do Estado do ParÃ¡ ' + char(13)+ char(10) + '
+	Secretaria Especial de Estado de GestÃ£o ' + char(13)+ char(10) + '
+	Secretaria de Estado de AdministraÃ§Ã£o ' + char(13)+ char(10) + '
+	Sistema de GestÃ£o Integrada de Recursos Humanos ' + char(13)+ char(10) + '
 	' + char(13)+ char(10) + '
 	' + char(13)+ char(10) + '
 	---------------------------------------------------------------- ' + char(13)+ char(10) + '
 	C O M P R O V A N T E D E P A G A M E N T O' + char(13)+ char(10) + '
 	---------------------------------------------------------------- ' + char(13)+ char(10) + '
-	ID Funcional                                      Mês/Ano' + char(13)+ char(10) + '
+	ID Funcional                                      MÃªs/Ano' + char(13)+ char(10) + '
 	'+ @MATRICULA + '                                    '+ cast(@DATA_HOJE as varchar(max)) + '  ' + char(13)+ char(10) + '
 	Nome						CPF			 Cargo             ' + char(13)+ char(10) + '
 	'+ @NOME + '           '+ cast(@CPF as varchar(max)) + '		 '+ cast(@cargo as varchar(max)) + '			' + char(13)+ char(10) + '
 	' + char(13)+ char(10) + '
-	ITEM    DISCRIMINAÇÃO       REFERÊNCIA       PROVENTO        DESCONTO
+	ITEM    DISCRIMINAÃ‡ÃƒO       REFERÃŠNCIA       PROVENTO        DESCONTO
 	1		Sal Bruto	           '+ cast(@SALARIO_BRUTO as varchar(max)) +'
 	2		Repouso remunerado		'+ cast(@retorno_repouso_rem as varchar(max)) +'
 	3		Escolaridade			'+ cast(@retorno_grat_escolaridade as varchar(max)) +'
-	4		Aux. Alimentação		'+ cast(@retorno_aux_alimentacao as varchar(max)) +'
-	5		Salário Família			'+ cast(@retorno_sal_familia as varchar(max)) +'
-	6		Anuênio			        '+ cast(@retorno_anuenio as varchar(max)) +'
+	4		Aux. AlimentaÃ§Ã£o		'+ cast(@retorno_aux_alimentacao as varchar(max)) +'
+	5		SalÃ¡rio FamÃ­lia			'+ cast(@retorno_sal_familia as varchar(max)) +'
+	6		AnuÃªnio			        '+ cast(@retorno_anuenio as varchar(max)) +'
 	7		Vale Cultura			'+ cast(@retorno_vale_cultura as varchar(max)) +'
 	8		IRPF						 '+ cast(@retorno_IRRF as varchar(max)) +'
 	9		Vale Transporte					'+ cast(@retorno_vale_transp as varchar(max)) +'
 	10		INSS					       '+ cast(@retorno_INSS as varchar(max)) +'
-	11		Plano de Saúde			               '+ cast(@retorno_plano_saude as varchar(max)) +'
+	11		Plano de SaÃºde			               '+ cast(@retorno_plano_saude as varchar(max)) +'
 	' + char(13)+ char(10) + '
 	---------------------------------------------------------------- ' + char(13)+ char(10) + '
 	---------------------------------------------------------------- ' + char(13)+ char(10) + '
-	Salário Líquido' + char(13)+ char(10) + '           '+ cast(@SALARIO_FINAL as varchar(max))
+	SalÃ¡rio LÃ­quido' + char(13)+ char(10) + '           '+ cast(@SALARIO_FINAL as varchar(max))
 
 	EXEC WriteToFile 'C:\LOG_DB_FRR\RELATORIO.txt', @TEXTO
 END
